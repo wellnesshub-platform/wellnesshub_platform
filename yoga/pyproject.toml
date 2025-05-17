@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wellness_hub"
+version = "0.1.0"
+description = "AI-powered daily planner and wellness assistant"
+authors = [{ name = "Himanshu Shukla", email = "hshukla4@yahoo.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "spacy",
+    "PyMuPDF>=1.21",
+    "torch",
+    "durable_rules",
+    "Flask",
+    "pandas"
+]
+
+[project.scripts]
+wellness = "wellness_hub.main:main"
