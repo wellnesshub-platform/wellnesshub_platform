@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import 'screens/wellness_home_page.dart'; // Or the actual file where WellnessHomePage is
+import 'app/routes.dart';
+import 'screens/home/home_screen.dart';
+import 'app/theme.dart';
+
 
 void main() {
-  runApp(const WellnessHubApp());
+  runApp(const WellnessApp());
 }
 
-class WellnessHubApp extends StatelessWidget {
-  const WellnessHubApp({super.key});
+class WellnessApp extends StatelessWidget {
+  const WellnessApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Wellness Hub',
-      debugShowCheckedModeBanner: false,
-      home: WellnessHomePage(), // This should match your actual widget
+      theme: AppTheme.lightTheme,
+      initialRoute: '/',
+      onGenerateRoute: AppRoutes.generateRoute,
     );
   }
 }

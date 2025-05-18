@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		Euq6iuI1Gl2J3ieKyuF+Y0bA7uI=
+		dtrXB1YOpX51YAMw4pLZD8KtWLY=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,15 +54,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		cVjMAISM6j49ul2RPb8/n9QEk90=
+		fkoETsfdPlq8sy9/GQpQJxrS4nI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		ME0cAg6cl/bTZmwXEVgMugDccUI=
+		iGz0KAV6DzocMc5rFF0IQgpWZaM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		F8kZ3swBihwffCakKbEAVS4PaQI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -70,11 +70,15 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		UvV7FZld1L7Ald4NjwEdsgIyme8=
+		3XCqQqEn8U2rNd9ZvMKG5TRqqqc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
 		re4p7E8rPLLsN+wzaPN/+AVpXTY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/wellnesshub-logo.png</key>
+		<data>
+		U7HpzcoGNMCzbVmQa6uMEm6XrKE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -86,7 +90,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		vH6IOkeQj6fMjDNQhYSfPde6R8M=
+		Wuk6wZP8J51icqgYcEjRuG6YqcE=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -192,6 +196,30 @@
 		<data>
 		ipm8hg7aB3LzsfShJfpNR0QQ4hw=
 		</data>
+		<key>Frameworks/Try.framework/Info.plist</key>
+		<data>
+		TyMAlvkPX7/xUxHpebvObGnTz6M=
+		</data>
+		<key>Frameworks/Try.framework/Try</key>
+		<data>
+		1bhz/yHTEK6deFgf+4e+KyUjAaY=
+		</data>
+		<key>Frameworks/Try.framework/_CodeSignature/CodeResources</key>
+		<data>
+		mqJA7Np/wiL+5Wy46RtQqy9Bix4=
+		</data>
+		<key>Frameworks/speech_to_text.framework/Info.plist</key>
+		<data>
+		QZEkw3XL5fD1/wMSnGsTdiaCWgA=
+		</data>
+		<key>Frameworks/speech_to_text.framework/_CodeSignature/CodeResources</key>
+		<data>
+		EXnQF6YHQRrWQWJeDX79+q0bVn0=
+		</data>
+		<key>Frameworks/speech_to_text.framework/speech_to_text</key>
+		<data>
+		XzuPSA+nfG+tGfZbJxFNmqK29/w=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		1OZ+aZA2Kt9cmr7+xc+iYK0QupI=
@@ -202,7 +230,7 @@
 		</data>
 		<key>Runner.debug.dylib</key>
 		<data>
-		0dCgaCymwCAydCqeooUCVf/aW1A=
+		XBpfN83JpPOoaQV4sHhg8eAVEM0=
 		</data>
 		<key>__preview.dylib</key>
 		<data>
@@ -285,7 +313,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+co2Gd7vXZObIKIquvXRPUJSMXNevilk9vkVWH/yS3Q=
+			bK9/2uC9PlpV52W6ZVC4JtZXySsqiHs6ijtwVuCkE2U=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -299,21 +327,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wCXTBbJ4iZgyAEJemT4kx+mIF/WKpNreT3OE3RIc9hg=
+			Fhoo+zHMl7QMXe5JE3X/9fdl1UKKm6vqPZaI80icJcY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AK9VrT1vIYmP534P8JLRoc2lLJQbaGDpko1FyK+MCV0=
+			rnypsnwl0DKy4/UzfTEjzCvVn9/01opqvzUb02mHzR0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			BRfgUdEQUKaKSLl9lkItkGPxAFITtQq47MPBvh0SJ0o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -327,7 +355,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xYmMFGRlcHQ/u1lvgzg8a0Ga+NLSPhKUgWrZYn+V8Qg=
+			z7ZVsAu6mw69DjuXXeLQXT/YmmKEhvlfeWoKRNaI+nM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
@@ -335,6 +363,13 @@
 			<key>hash2</key>
 			<data>
 			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/wellnesshub-logo.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			1cbJ6VQGIXBAig7MpcfP47e50hnmtyRkUuwvFvLWUZY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -355,7 +390,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WHwW8p00N1PHhlEPkAllO7hnbVsmSWvtLaOvYvB0oCo=
+			2qbMVTxWGivFaGVttXpJIsKVA5x1E9PVToDywxuZf+s=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -540,11 +575,53 @@
 			wSU3Ai74GJkae/7UGnbY1q6WL/vA5lEax2Kl0IRef3w=
 			</data>
 		</dict>
+		<key>Frameworks/Try.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			DGvFNL8uWZyv2a2qO2gQQROZk398NNxPrOpwFgkwArs=
+			</data>
+		</dict>
+		<key>Frameworks/Try.framework/Try</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3xGIgjYhn5hemBm5A4oIrjS1PF6od4OK8V5mpWHvvjs=
+			</data>
+		</dict>
+		<key>Frameworks/Try.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			SgMb5JZHF94cWfV7erb+Jey0ZvMoEib4RRJDyRkl0FY=
+			</data>
+		</dict>
+		<key>Frameworks/speech_to_text.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UtpV5EoHCjy+YjY939FmwWmXG6zKzfvGIOOjwN+vrhA=
+			</data>
+		</dict>
+		<key>Frameworks/speech_to_text.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xV3wP+0uD2piwyT9KTMBcxJggEyDyS7V/FoIsOA0Yvg=
+			</data>
+		</dict>
+		<key>Frameworks/speech_to_text.framework/speech_to_text</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			O/WT3DaCdCy9a5VumBTo75V2JvF+Va3P/oozr+a/pt0=
+			</data>
+		</dict>
 		<key>Runner.debug.dylib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5lz8P6qyMwSGHODnoXn3eIxEtv5u6WltEgOsg7/DO8o=
+			jvJBPEW/uxGCRb+K0F/bGrA4nXS66Wylv1ET63sukd0=
 			</data>
 		</dict>
 		<key>__preview.dylib</key>
