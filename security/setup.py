@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
     name="wellness_hub",
@@ -10,12 +10,8 @@ setup(
         "torch",
         "durable_rules",
         "Flask",
-        "pandas"
+        "pandas",
     ],
-    entry_points={
-        "console_scripts": [
-            "wellness=wellness_hub.main:main"
-        ]
-    },
-    include_package_data=True
+    entry_points={"console_scripts": ["wellness=wellness_hub.main:main"]},
+    include_package_data=True,
 )
