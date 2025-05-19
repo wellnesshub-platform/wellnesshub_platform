@@ -2,3 +2,43 @@
 .venv/
 __pycache__/
 venv/
+
+# Flutter/Dart
+.dart_tool/
+.packages
+.pub/
+android/.gradle/
+.idea/
+.vscode/
+.buildlog/
+.flutter-plugins
+.flutter-plugins-dependencies
+.dart_tool/**/*.json
+
+
+build/
+build/ios/
+ux/build/ios/
+# Ignore only Flutter build artifacts, not your asset files
+build/**/*.json
+
+ios/Flutter/Generated.xcconfig
+ios/Pods/
+ios/Podfile.lock
+ios/Runner.xcodeproj/project.pbxproj
+macos/Flutter/
+linux/flutter/
+windows/flutter/
+
+# Optional: exclude big binaries
+*.log
+
+# Zip/backups
+*.zip
+*.bak
+
+# macOS junk
+.DS_Store
+
+# Ensure JSON files in assets are NOT ignored
+!ux/assets/**/*.json
