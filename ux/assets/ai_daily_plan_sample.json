@@ -1,0 +1,54 @@
+{
+  "daily_plan": [
+    {
+      "pillar": "Journal",
+      "activity": "Write Morning Intention",
+      "time": "06:00"
+    },
+    {
+      "pillar": "Mind",
+      "activity": "Morning Meditation",
+      "time": "06:30"
+    },
+    {
+      "pillar": "Body",
+      "activity": "Yoga Routine",
+      "time": "07:30"
+    },
+    {
+      "pillar": "Satvik Food",
+      "activity": "Breakfast Guidance",
+      "time": "08:00"
+    },
+    {
+      "pillar": "Spirituality",
+      "activity": "Pooja Reminder",
+      "time": "08:30"
+    },
+    {
+      "pillar": "Spirituality",
+      "activity": "Today\u2019s Gita Quote",
+      "time": "09:00"
+    },
+    {
+      "pillar": "Music & Raga",
+      "activity": "Bhajan of the Day",
+      "time": "10:00"
+    },
+    {
+      "pillar": "Music & Raga",
+      "activity": "Recommended Raga",
+      "time": "11:00"
+    },
+    {
+      "pillar": "Body",
+      "activity": "Breathwork Practice",
+      "time": "18:30"
+    },
+    {
+      "pillar": "Mind",
+      "activity": "Evening Affirmations",
+      "time": "19:00"
+    }
+  ]
+}
