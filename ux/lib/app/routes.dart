@@ -12,15 +12,21 @@ import '../screens/pillars/vastu_screen.dart';
 import '../screens/pillars/journal_screen.dart';
 import '../screens/pillars/dharma_screen.dart';
 import '../screens/pillars/reminders_screen.dart';
-import '../screens/pillars/daily_planner_screen.dart';
+// import '../screens/pillars/daily_planner_screen.dart';
+import '../screens/pillars/daily_screen.dart';
+// import '../screens/pillars/new_daily_planner_screen.dart';
+import '../screens/pillars/check_in_screen.dart';
+
 
 class AppRoutes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeScreen());
+      case '/daily':
+        return MaterialPageRoute(builder: (_) => const CheckInScreen());  
       case '/daily-planner':
-        return MaterialPageRoute(builder: (_) => const DailyPlannerScreen());
+        return MaterialPageRoute(builder: (_) => const DailyScreen());
       case '/mind':
         return MaterialPageRoute(builder: (_) => const MindScreen());
       case '/body':
@@ -45,6 +51,9 @@ class AppRoutes {
         return MaterialPageRoute(builder: (_) => const DharmaScreen());
       case '/reminders':
         return MaterialPageRoute(builder: (_) => const RemindersScreen());
+        
+      // case '/checkin':
+      //   return MaterialPageRoute(builder: (_) => const CheckInScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

@@ -59,41 +59,61 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         ),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          const SizedBox(height: 16),
-          const Text(
-            "Ancient Wisdom.\nModern Healing.",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Color(0xFF5E2600),
-              fontWeight: FontWeight.w600,
+      body: SafeArea(
+        child: ListView(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+          children: [
+            const Center(
+              child: Text(
+                "Ancient Wisdom.\nModern Healing.",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Color(0xFF5E2600),
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/daily-planner'); // Navigate to your planner screen
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFFFFA726),
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-              elevation: 6,
+            const SizedBox(height: 16),
+
+            // ✅ Check-In & Daily Planner Side-by-Side
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton.icon(
+                  onPressed: () => Navigator.pushNamed(context, '/daily'),
+                  icon: const Icon(Icons.check_circle_outline, color: Colors.white),
+                  label: const Text('Check-In', style: TextStyle(color: Colors.white)),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF944B00),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                    elevation: 4,
+                  ),
+                ),
+                const SizedBox(width: 16),
+                ElevatedButton(
+                  onPressed: () => Navigator.pushNamed(context, '/daily-planner'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFFFA726),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+                    elevation: 4,
+                  ),
+                  child: const Text('Daily Planner', style: TextStyle(color: Colors.white)),
+                ),
+              ],
             ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-              child: Text('Daily Planner', style: TextStyle(color: Colors.white)),
-            ),
-          ),
-          const SizedBox(height: 10),
-          Expanded(
-            child: GridView.count(
+
+            const SizedBox(height: 20),
+
+            GridView.count(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 3,
               childAspectRatio: 0.85,
-              mainAxisSpacing: 12,
               crossAxisSpacing: 12,
-              padding: const EdgeInsets.all(12),
+              mainAxisSpacing: 12,
               children: List.generate(pillars.length, (index) {
                 final pillar = pillars[index];
                 return FadeTransition(
@@ -110,17 +130,21 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                 );
               }),
             ),
-          ),
-          const Text(
-            'सर्वे भवन्तु सुखिनः',
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-              color: Color(0xFF5E2600),
+
+            const SizedBox(height: 24),
+            const Center(
+              child: Text(
+                'सर्वे भवन्तु सुखिनः',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF5E2600),
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 12),
-        ],
+            const SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }
