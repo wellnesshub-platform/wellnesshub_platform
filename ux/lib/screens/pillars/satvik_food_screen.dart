@@ -6,80 +6,39 @@ class SatvikFoodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFF0E0B1F),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF8B4513),
-        title: const Text(
-          'Satvik Food Guide',
-          style: TextStyle(color: Colors.white),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
+        title: const Text('🥗 Satvik Food'),
+        backgroundColor: Color(0xFF0E0B1F),
+        centerTitle: true,
       ),
-      backgroundColor: const Color(0xFFFFF8E1),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Text(
-            '🌿 Seasonal Food Suggestions',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 12),
-          _buildFoodCard(
-            title: 'Spring (Kapha)',
-            foods: 'Ginger tea, steamed broccoli, bitter greens, turmeric milk',
-            icon: '🌱',
-          ),
-          const SizedBox(height: 12),
-          _buildFoodCard(
-            title: 'Summer (Pitta)',
-            foods: 'Coconut water, cucumber, melons, mint chutney',
-            icon: '🍃',
-          ),
-          const SizedBox(height: 12),
-          _buildFoodCard(
-            title: 'Winter (Vata)',
-            foods: 'Warm soups, ghee, root vegetables, sesame oil',
-            icon: '❄️',
-          ),
-          const SizedBox(height: 24),
-          const Text(
-            '🧘 Ayurvedic Note:',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 12),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.lightBlue.shade50,
-              borderRadius: BorderRadius.circular(16),
-            ),
-            child: const Text(
-              'Always eat fresh, warm, and seasonal foods. Avoid processed, overly spicy, or stale meals for maintaining a satvik lifestyle.',
-              style: TextStyle(fontSize: 16),
-            ),
-          ),
+          _buildCard('🍋 Morning', 'Warm lemon water + soaked almonds.'),
+          const SizedBox(height: 16),
+          _buildCard('🥦 Lunch', 'Khichdi with ghee & seasonal sabji.'),
+          const SizedBox(height: 16),
+          _buildCard('🥛 Evening', 'Herbal tea + light seasonal fruit.'),
         ],
       ),
     );
   }
 
-  Widget _buildFoodCard({required String title, required String foods, required String icon}) {
+  Widget _buildCard(String title, String content) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.green.shade100,
-        borderRadius: BorderRadius.circular(16),
+        color: Colors.white12,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.orange.shade100),
       ),
-      child: Row(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(icon, style: const TextStyle(fontSize: 24)),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Text(
-              '$title\n$foods',
-              style: const TextStyle(fontSize: 16),
-            ),
-          ),
+          Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
+          const SizedBox(height: 8),
+          Text(content, style: const TextStyle(fontSize: 15, color: Colors.white)),
         ],
       ),
     );

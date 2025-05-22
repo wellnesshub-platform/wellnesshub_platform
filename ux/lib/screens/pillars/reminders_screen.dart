@@ -6,15 +6,12 @@ class RemindersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0E0B1F),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF8B4513),
-        title: const Text(
-          'Reminders & Alerts',
-          style: TextStyle(color: Colors.white),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: const Color(0xFF0E0B1F),
+        title: const Text('⏰ Reminders & Alerts'),
+        centerTitle: true,
       ),
-      backgroundColor: const Color(0xFFFFF8E1),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -42,12 +39,13 @@ class RemindersScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.lightBlue.shade50,
+              color: Colors.white10,
               borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.orange.shade300),
             ),
             child: const Text(
-              '📅 Tip: Use voice or touch to schedule reminders for mantra chanting, fasting days, or journaling moments.',
-              style: TextStyle(fontSize: 16),
+              '📅 Tip: Use voice or touch to schedule reminders for chanting, fasting, or journaling.',
+              style: TextStyle(fontSize: 15, color: Colors.white70),
             ),
           ),
         ],
@@ -64,10 +62,11 @@ class RemindersScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.teal.shade100,
+        color: Colors.white12,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.orange.shade100),
         boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 5, offset: Offset(0, 3)),
+          BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
       child: Row(
@@ -79,10 +78,12 @@ class RemindersScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+                Text(title,
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 16, color: Colors.orangeAccent)),
                 const SizedBox(height: 4),
-                Text('⏰ $time'),
-                Text(note),
+                Text('⏰ $time', style: const TextStyle(color: Colors.white70)),
+                Text(note, style: const TextStyle(color: Colors.white)),
               ],
             ),
           ),

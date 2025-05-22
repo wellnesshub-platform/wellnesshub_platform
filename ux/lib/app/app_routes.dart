@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import '../constants/route_paths.dart';
+import '../screens/auth/login_screen.dart';
 import '../screens/home/home_screen.dart';
-import '../screens/pillars/mind_screen.dart';
+import '../screens/checkin/check_in_screen.dart';
+import '../screens/planner/daily_screen.dart';
+import '../screens/profile/profile_screen.dart';
+import '../screens/pillars/mind_screen.dart'; 
 import '../screens/pillars/body_screen.dart';
 import '../screens/pillars/spirituality_screen.dart';
 import '../screens/pillars/ayurveda_screen.dart';
@@ -11,49 +16,59 @@ import '../screens/pillars/astrology_screen.dart';
 import '../screens/pillars/vastu_screen.dart';
 import '../screens/pillars/journal_screen.dart';
 import '../screens/pillars/dharma_screen.dart';
-import '../screens/pillars/reminders_screen.dart';
-// import '../screens/pillars/daily_planner_screen.dart';
-import '../screens/pillars/daily_screen.dart';
-// import '../screens/pillars/new_daily_planner_screen.dart';
-import '../screens/pillars/check_in_screen.dart';
+import '../screens/pillars/reminders_screen.dart';  
+import '../screens/planner/daily_calendar_screen.dart';
+import '../screens/ai-bot/ai_bot_screen.dart';
 
 
 class AppRoutes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case '/':
+      case RoutePaths.login:
+        return MaterialPageRoute(builder: (_) => const LoginScreen());
+
+      case RoutePaths.home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
-      case '/daily':
-        return MaterialPageRoute(builder: (_) => const CheckInScreen());  
-      case '/daily-planner':
-        return MaterialPageRoute(builder: (_) => const DailyScreen());
-      case '/mind':
+
+      case RoutePaths.checkIn:
+        return MaterialPageRoute(builder: (_) => const CheckInScreen());
+
+      case RoutePaths.dailyPlanner:
+        final args = settings.arguments as List<Map<String, dynamic>>?;
+        return MaterialPageRoute(builder: (_) => DailyScreen(planOverride: args));
+      case RoutePaths.mind:
         return MaterialPageRoute(builder: (_) => const MindScreen());
-      case '/body':
+
+      case RoutePaths.body:
         return MaterialPageRoute(builder: (_) => const BodyScreen());
-      case '/spirituality':
+
+      case RoutePaths.spirituality:
         return MaterialPageRoute(builder: (_) => const SpiritualityScreen());
-      case '/ayurveda':
+
+      case RoutePaths.ayurveda:
         return MaterialPageRoute(builder: (_) => const AyurvedaScreen());
-      case '/satvik-food':
+
+      case RoutePaths.profile:
+        return MaterialPageRoute(builder: (_) => const ProfileScreen());
+
+      case RoutePaths.satvikFood:
         return MaterialPageRoute(builder: (_) => const SatvikFoodScreen());
-      case '/music-raga':
+
+      case RoutePaths.musicRaga:
         return MaterialPageRoute(builder: (_) => const MusicRagaScreen());
-      case '/pooja':
+
+      case RoutePaths.pooja:
         return MaterialPageRoute(builder: (_) => const PoojaScreen());
-      case '/astrology':
+
+      case RoutePaths.astrology:
         return MaterialPageRoute(builder: (_) => const AstrologyScreen());
-      case '/vastu':
-        return MaterialPageRoute(builder: (_) => const VastuScreen());
-      case '/journal':
-        return MaterialPageRoute(builder: (_) => const JournalScreen());
-      case '/dharma':
-        return MaterialPageRoute(builder: (_) => const DharmaScreen());
-      case '/reminders':
-        return MaterialPageRoute(builder: (_) => const RemindersScreen());
-        
-      // case '/checkin':
-      //   return MaterialPageRoute(builder: (_) => const CheckInScreen());
+
+      case RoutePaths.calendar:
+        return MaterialPageRoute(builder: (_) => const DailyCalendarScreen());
+
+      case RoutePaths.aiBot:
+        return MaterialPageRoute(builder: (_) => const AiBotScreen());
+
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(

@@ -6,15 +6,12 @@ class JournalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF0E0B1F),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF8B4513),
-        title: const Text(
-          'Journal & Reflection',
-          style: TextStyle(color: Colors.white),
-        ),
-        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: const Color(0xFF0E0B1F),
+        title: const Text('📓 Journal & Reflection'),
+        centerTitle: true,
       ),
-      backgroundColor: const Color(0xFFFFF8E1),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
@@ -36,12 +33,13 @@ class JournalScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: Colors.orange.shade50,
+              color: Colors.white10,
               borderRadius: BorderRadius.circular(16),
+              border: Border.all(color: Colors.orange.shade300),
             ),
             child: const Text(
-              '🧘 Tip: Speak or type your thoughts. The AI will soon transcribe and analyze emotional patterns privately.',
-              style: TextStyle(fontSize: 16),
+              '🧘 Tip: Speak or type your thoughts. AI will transcribe & analyze emotion patterns privately.',
+              style: TextStyle(fontSize: 15, color: Colors.white70),
             ),
           ),
         ],
@@ -56,18 +54,21 @@ class JournalScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.blueGrey.shade100,
+        color: Colors.white12,
         borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.orange.shade100),
         boxShadow: const [
-          BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 4)),
+          BoxShadow(color: Colors.black26, blurRadius: 4, offset: Offset(0, 2)),
         ],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text(title,
+              style: const TextStyle(
+                  fontSize: 17, fontWeight: FontWeight.bold, color: Colors.orangeAccent)),
           const SizedBox(height: 8),
-          Text(prompt, style: const TextStyle(fontSize: 16)),
+          Text(prompt, style: const TextStyle(fontSize: 15, color: Colors.white)),
         ],
       ),
     );
