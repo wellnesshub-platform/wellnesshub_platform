@@ -4,12 +4,12 @@ import importlib
 import pkgutil
 from typing import Dict, List  # noqa: F401
 
-from fastapi import (  # noqa: F401
+from fastapi import Form  # noqa: F401
+from fastapi import (
     APIRouter,
     Body,
     Cookie,
     Depends,
-    Form,
     Header,
     HTTPException,
     Path,

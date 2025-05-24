@@ -1,13 +1,14 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-import os
 
 from openapi_server.routers.body_api import router as BodyApiRouter
 
 app = FastAPI(
     title="Body Service API",
     description="API for delivering wellness content related to Body (e.g., Yoga videos, exercise routines).",
-    version="1.0.0"
+    version="1.0.0",
 )
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
