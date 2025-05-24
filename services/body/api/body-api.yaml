@@ -1,0 +1,119 @@
+openapi: 3.0.3
+info:
+  title: Body Service API
+  description: API for delivering wellness content related to Body (e.g., Yoga videos, exercise routines).
+  version: 1.0.0
+servers:
+  - url: http://localhost:8000
+
+paths:
+  /yoga/videos:
+    get:
+      summary: Get available yoga videos
+      description: Returns a list of available yoga videos with metadata.
+      responses:
+        '200':
+          description: List of yoga videos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Video'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+    post:
+      summary: Upload a new yoga video
+      description: Adds a new yoga video entry with metadata.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VideoUploadRequest'
+      responses:
+        '201':
+          description: Video uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Video'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Video:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "abc123"
+        title:
+          type: string
+          example: "Morning Flow Yoga"
+        duration:
+          type: string
+          example: "15:32"
+        url:
+          type: string
+          format: uri
+          example: "https://cdn.wellnesshub.ai/videos/morning-flow.mp4"
+        difficulty:
+          type: string
+          enum: [Beginner, Intermediate, Advanced]
+          example: "Beginner"
+        tags:
+          type: array
+          items:
+            type: string
+          example: ["flexibility", "balance"]
+
+    VideoUploadRequest:
+      type: object
+      required:
+        - title
+        - url
+      properties:
+        title:
+          type: string
+          example: "Evening Relaxation Yoga"
+        url:
+          type: string
+          format: uri
+          example: "https://cdn.wellnesshub.ai/videos/evening-relaxation.mp4"
+        duration:
+          type: string
+          example: "20:00"
+        difficulty:
+          type: string
+          enum: [Beginner, Intermediate, Advanced]
+        tags:
+          type: array
+          items:
+            type: string
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          example: 500
+        message:
+          type: string
+          example: "Internal Server Error"

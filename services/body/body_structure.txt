@@ -1,0 +1,238 @@
+.
+├── .DS_Store
+├── .env
+├── .flake8
+├── .github
+│   ├── .flake8
+│   └── workflows
+│       ├── .flake8
+│       └── python-app.yml
+├── .gitignore
+├── .venv
+│   ├── bin
+│   │   ├── Activate.ps1
+│   │   ├── activate
+│   │   ├── activate.csh
+│   │   ├── activate.fish
+│   │   ├── dotenv
+│   │   ├── fastapi
+│   │   ├── pip
+│   │   ├── pip3
+│   │   ├── pip3.11
+│   │   ├── python -> python3
+│   │   ├── python3 -> /Users/himanshushukla/.pyenv/versions/3.11.8/bin/python3
+│   │   ├── python3.11 -> python3
+│   │   ├── uvicorn
+│   │   ├── watchfiles
+│   │   └── websockets
+│   ├── include
+│   │   └── python3.11
+│   ├── lib
+│   │   └── python3.11
+│   │       └── site-packages
+│   └── pyvenv.cfg
+├── Makefile
+├── README.md
+├── __init__.py
+├── _backup
+│   ├── Dockerfile
+│   ├── Makefile
+│   ├── README.md
+│   ├── __init__.py
+│   ├── _backup
+│   │   ├── Dockerfile
+│   │   ├── Makefile
+│   │   ├── README.md
+│   │   └── __init__.py
+│   ├── api
+│   │   ├── .flake8
+│   │   └── .gitkeep
+│   ├── bin
+│   │   ├── .flake8
+│   │   └── .gitkeep
+│   ├── body_structure.txt
+│   ├── cleanup.sh
+│   ├── doc
+│   │   ├── .flake8
+│   │   └── .gitkeep
+│   ├── docker-compose.yml
+│   ├── hooks
+│   │   └── .flake8
+│   ├── impl
+│   │   ├── .flake8
+│   │   └── .gitkeep
+│   ├── pre-commit.yaml.bak
+│   ├── pyproject.toml
+│   ├── pytest.ini
+│   ├── requirements-dev.txt
+│   ├── requirements.txt
+│   ├── server
+│   │   ├── .flake8
+│   │   ├── .gitignore
+│   │   ├── .openapi-generator
+│   │   │   ├── FILES
+│   │   │   └── VERSION
+│   │   ├── .openapi-generator-ignore
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── docker-compose.yaml
+│   │   ├── openapi.yaml
+│   │   ├── pyproject.toml
+│   │   ├── requirements.txt
+│   │   ├── setup.cfg
+│   │   ├── src
+│   │   │   ├── main.py
+│   │   │   ├── openapi_server
+│   │   │   └── requirements.txt
+│   │   ├── static
+│   │   │   └── videos
+│   │   └── tests
+│   │       ├── conftest.py
+│   │       └── test_default_api.py
+│   ├── service
+│   │   ├── .flake8
+│   │   └── .gitkeep
+│   ├── setup.py
+│   └── tests
+│       ├── .config
+│       │   ├── .flake8
+│       │   ├── .gitkeep
+│       │   └── test_config.yaml
+│       ├── .data
+│       │   ├── .flake8
+│       │   └── .gitkeep
+│       ├── .flake8
+│       └── .gitkeep
+├── api
+│   └── body-api.yaml
+├── body_structure.txt
+├── cleanup.sh
+├── config
+│   ├── Dockerfile
+│   └── pyproject.toml
+├── creatdirfile.sh
+├── docker-compose.yml
+├── hooks
+│   └── .flake8
+├── out
+├── pre-commit.yaml.bak
+├── pytest.ini
+├── reorg.py
+├── requirements-dev.txt
+├── requirements.txt
+├── scripts
+│   ├── api
+│   ├── cleanup_structure.sh
+│   ├── config
+│   ├── docker
+│   └── scripts
+├── server
+│   ├── .DS_Store
+│   ├── .flake8
+│   ├── .gitignore
+│   ├── .openapi-generator
+│   │   ├── FILES
+│   │   └── VERSION
+│   ├── .openapi-generator-ignore
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── docker-compose.yaml
+│   ├── openapi.yaml
+│   ├── pyproject.toml
+│   ├── requirements.txt
+│   ├── setup.cfg
+│   ├── src
+│   │   ├── .flake8
+│   │   ├── .gitignore
+│   │   ├── .openapi-generator
+│   │   │   ├── FILES
+│   │   │   └── VERSION
+│   │   ├── .openapi-generator-ignore
+│   │   ├── Dockerfile
+│   │   ├── README.md
+│   │   ├── docker-compose.yaml
+│   │   ├── openapi.yaml
+│   │   ├── openapi_server
+│   │   │   ├── __pycache__
+│   │   │   ├── apis
+│   │   │   ├── impl
+│   │   │   ├── main.py
+│   │   │   ├── models
+│   │   │   └── security_api.py
+│   │   ├── pyproject.toml
+│   │   ├── requirements.txt
+│   │   ├── setup.cfg
+│   │   ├── src
+│   │   │   └── openapi_server
+│   │   ├── tests
+│   │   │   ├── conftest.py
+│   │   │   └── test_default_api.py
+│   │   └── videos
+│   │       ├── Bhujangasana_Yoga_Guide.mp3
+│   │       ├── Krishna_Bhajan.mp3
+│   │       ├── Orange-Background.png
+│   │       ├── Shiv_Stuti.mp3
+│   │       ├── Tadasana_Yoga_Guide.mp3
+│   │       ├── bhujangasana_video.mp4
+│   │       ├── om_namah_shivaya.mp3
+│   │       ├── sun_salutation.mov
+│   │       └── tadasana_video.mp4
+│   ├── tests
+│   │   ├── conftest.py
+│   │   └── test_default_api.py
+│   └── videos
+├── setup.py
+├── src
+│   ├── .DS_Store
+│   ├── .flake8
+│   ├── .gitignore
+│   ├── .openapi-generator
+│   │   ├── FILES
+│   │   └── VERSION
+│   ├── .openapi-generator-ignore
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── docker-compose.yaml
+│   ├── openapi.yaml
+│   ├── openapi_server
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   └── main.cpython-311.pyc
+│   │   ├── apis
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   └── body_api_base.py
+│   │   ├── main.py
+│   │   ├── models
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   ├── error.py
+│   │   │   ├── video.py
+│   │   │   └── video_upload_request.py
+│   │   ├── routers
+│   │   │   ├── __init__.py
+│   │   │   ├── __pycache__
+│   │   │   ├── body_api.py
+│   │   │   └── body_impl.py
+│   │   └── security_api.py
+│   ├── pyproject.toml
+│   ├── requirements.txt
+│   ├── setup.cfg
+│   ├── src
+│   │   └── openapi_server
+│   │       ├── apis
+│   │       ├── impl
+│   │       ├── main.py
+│   │       ├── models
+│   │       └── security_api.py
+│   └── tests
+│       ├── conftest.py
+│       └── test_default_api.py
+├── templates
+│   ├── .DS_Store
+│   └── python-fastapi
+│       └── main.mustache
+└── videos
+
+70 directories, 166 files
