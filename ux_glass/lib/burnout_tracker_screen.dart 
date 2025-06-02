@@ -1,0 +1,275 @@
+// lib/screens/burnout_tracker_screen.dart
+import 'package:flutter/material.dart';
+import '../models/burnout_history_data.dart';
+import '../models/burnout_prediction_response.dart';
+import '../models/checkin_data_for_api.dart'; // Import the new CheckinDataForApi
+import '../services/burnout_service.dart';
+// import 'package:fl_chart/fl_chart.dart'; // Uncomment if you add fl_chart to pubspec.yaml
+
+class BurnoutTrackerScreen extends StatefulWidget {
+  const BurnoutTrackerScreen({super.key});
+
+  @override
+  State<BurnoutTrackerScreen> createState() => _BurnoutTrackerScreenState();
+}
+
+class _BurnoutTrackerScreenState extends State<BurnoutTrackerScreen> {
+  late Future<List<BurnoutHistoryData>> _burnoutHistoryData;
+  BurnoutPredictionResponse? _latestPrediction;
+  final String _mockUserId = "mock_user_1"; // Replace with real user ID from auth
+
+  // Example controllers for a simple check-in form (you'll have many more fields)
+  final TextEditingController _sleepHoursController = TextEditingController(text: '7.0');
+  final TextEditingController _stressLevelController = TextEditingController(text: '3');
+  final TextEditingController _moodController = TextEditingController(text: '🙂');
+  final TextEditingController _energyLevelController = TextEditingController(text: '4');
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchBurnoutHistory();
+  }
+
+  void _fetchBurnoutHistory() {
+    setState(() {
+      _burnoutHistoryData = BurnoutService().fetchBurnoutHistory(_mockUserId);
+    });
+  }
+
+  Future<void> _performCheckin() async {
+    // For a real app, you'd collect data from all input fields (36 features!)
+    // For this example, we're hardcoding some default/mocked values for simplicity
+    // but demonstrating how to use the controllers for a few fields.
+
+    // A real check-in form would involve many input widgets and state management.
+    final checkinData = CheckinDataForApi(
+      userId: _mockUserId,
+      checkinDate: DateTime.now().toIso8601String().split('T')[0], // YYYY-MM-DD
+      sleepHours: double.tryParse(_sleepHoursController.text) ?? 7.0,
+      sleepQuality: "good", // Mocked
+      stressLevel: int.tryParse(_stressLevelController.text) ?? 3,
+      mood: _moodController.text, // Mocked
+      activityLevel: "medium", // Mocked
+      mealTiming: "on_time", // Mocked
+      hydrationGlasses: 8, // Mocked
+      didMeditation: true, // Mocked
+      sunlightHours: 7.0, // Mocked
+      temperature: 25.0, // Mocked
+      humidity: 60, // Mocked
+      cloudCover: 20, // Mocked
+      rainfallMm: 0.0, // Mocked
+      lastMealTime: "19:00", // Mocked
+      lastExerciseTime: "18:00", // Mocked
+      exerciseType: "yoga", // Mocked
+      exerciseDuration: 30, // Mocked
+      hadFastMorningWorkout: false, // Mocked
+      weight: 70.0, // Mocked
+      weightUnit: "kg", // Mocked
+      heightCm: 175.0, // Mocked
+      wakeUpFresh: true, // Mocked
+      overthinkingToday: false, // Mocked
+      cravingJunkToday: false, // Mocked
+      ateSugarToday: false, // Mocked
+      caffeineIntakeMg: 50, // Mocked
+      didGratitude: true, // Mocked
+      feltRushedToday: false, // Mocked
+      socialInteractionQuality: 4, // Mocked
+      energyLevel: int.tryParse(_energyLevelController.text) ?? 4, // Mocked
+      hadFamilyConflictToday: false, // Mocked
+      feltUnheardByFamily: false, // Mocked
+      caregivingResponsibility: false, // Mocked
+      familyEmotionalSupport: 5, // Mocked
+      stepsCount: 8000, // Mocked
+      hadNapToday: false, // Mocked
+      emotionalState: "Feeling good after check-in", // Optional
+    );
+
+    try {
+      final response = await BurnoutService().performBurnoutCheckin(checkinData);
+      setState(() {
+        _latestPrediction = response;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Burnout check-in successful!')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error performing check-in: $e')),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Burnout Tracker'),
+        backgroundColor: Colors.deepPurple,
+        elevation: 0,
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // --- Historical Burnout Data Chart Section ---
+            const Text(
+              'Your Burnout History',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              height: 250,
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: FutureBuilder<List<BurnoutHistoryData>>(
+                future: _burnoutHistoryData,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasError) {
+                    return Center(child: Text('Error loading history: ${snapshot.error}'));
+                  } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                    return const Center(child: Text('No historical data. Perform a check-in!'));
+                  } else {
+                    // This is where you'd integrate a charting library like fl_chart
+                    // For now, let's just list the data points.
+                    // You would process snapshot.data to create LineChartData.
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Burnout Level Trend (Mock Chart Placeholder):', style: TextStyle(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 10),
+                        Expanded(
+                          child: ListView.builder(
+                            itemCount: snapshot.data!.length,
+                            itemBuilder: (context, index) {
+                              final data = snapshot.data![index];
+                              return Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                child: Text('${data.formattedDate}: Level ${data.burnoutScore} (${data.riskLevel})'),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                },
+              ),
+            ),
+            const SizedBox(height: 30),
+
+            // --- Daily Check-in Section ---
+            const Text(
+              'Perform Daily Check-in',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+            ),
+            const SizedBox(height: 15),
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    spreadRadius: 2,
+                    blurRadius: 5,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // --- Simplified Input Fields (for demonstration) ---
+                  TextFormField(
+                    controller: _sleepHoursController,
+                    decoration: const InputDecoration(labelText: 'Sleep Hours (e.g., 7.5)'),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 10),
+                  TextFormField(
+                    controller: _stressLevelController,
+                    decoration: const InputDecoration(labelText: 'Stress Level (1-5)'),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 10),
+                   TextFormField(
+                    controller: _moodController,
+                    decoration: const InputDecoration(labelText: 'Mood (e.g., 🙂, 😐)'),
+                  ),
+                  const SizedBox(height: 10),
+                   TextFormField(
+                    controller: _energyLevelController,
+                    decoration: const InputDecoration(labelText: 'Energy Level (1-5)'),
+                    keyboardType: TextInputType.number,
+                  ),
+                  const SizedBox(height: 20),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _performCheckin,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text('Submit Check-in', style: TextStyle(fontSize: 16)),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 30),
+
+            // --- Latest Prediction Result Section ---
+            if (_latestPrediction != null)
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple.shade50,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.deepPurple),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Latest Burnout Prediction:',
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+                    ),
+                    const SizedBox(height: 10),
+                    Text('Score: ${_latestPrediction!.burnoutScore}', style: const TextStyle(fontSize: 16)),
+                    Text('Risk Level: ${_latestPrediction!.riskLevel}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    const SizedBox(height: 10),
+                    const Text('Recommendations:', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ..._latestPrediction!.recommendations.map((rec) => Padding(
+                          padding: const EdgeInsets.only(top: 4.0),
+                          child: Text('• $rec'),
+                        )),
+                  ],
+                ),
+              ),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
+  }
+}

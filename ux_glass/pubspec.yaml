@@ -1,0 +1,49 @@
+name: wellness_hub_flutter
+description: A Flutter project with 12 core wellness pillars.
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+dependencies:
+  http: ^1.2.1
+  flutter_lints: ^3.0.0
+  provider: ^6.1.0 
+  url_launcher: ^6.2.5
+  table_calendar: ^3.0.9
+  firebase_core: ^3.0.0   # Allow any 3.x version
+  firebase_auth: ^5.0.0   # Allow any 5.x version
+  google_sign_in: ^6.2.1  # Keep this for now, but be aware it might need changing
+  flutter_facebook_auth: ^7.0.0 # Allow any 7.x version
+  font_awesome_flutter: ^10.7.0 # For social logos
+  cupertino_icons: ^1.0.6
+  intl: ^0.19.0 # Already there, but ensure it is
+  audioplayers: ^5.2.1  
+
+  flutter:
+    sdk: flutter
+  
+  sign_in_button: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  http: ^1.4.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/wellnesshub-logo.png
+    - assets/ai_daily_plan_sample.json
+    - assets/splash_logo.png # <--- Add your image here
+    - assets/google_logo.png # <--- Add Google logo
+    - assets/facebook_logo.png # <--- Add Facebook logo    
+    - assets/app_logo.png
+    - assets/images/garden/flower_seedling.png
+    - assets/images/garden/flower_sprout.png
+    - assets/images/garden/flower_bud.png
+    - assets/images/garden/flower_bloom.png
+    - assets/images/garden/bush_seedling.png
+    - assets/images/garden/bush_sprout.png
+    - assets/images/garden/bush_default.png
+    - assets/images/garden/placeholder.png    
+    - assets/images/meditation/deep_focus.png
+    - assets/audio/deep_focus.mp3    

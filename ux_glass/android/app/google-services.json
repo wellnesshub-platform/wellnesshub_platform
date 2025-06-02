@@ -1,0 +1,105 @@
+{
+  "project_info": {
+    "project_number": "275370982626",
+    "project_id": "wellness-hub-platform",
+    "storage_bucket": "wellness-hub-platform.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275370982626:android:87f0f83520f0c89497b2bb",
+        "android_client_info": {
+          "package_name": "com.example.ux_gemini"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswl1KtuejVOEPoINTS34E-g9qXRJYP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275370982626:android:b9637661c9027aca97b2bb",
+        "android_client_info": {
+          "package_name": "com.example.wellnessHub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswl1KtuejVOEPoINTS34E-g9qXRJYP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275370982626:android:51efb25c79e1d27c97b2bb",
+        "android_client_info": {
+          "package_name": "com.example.wellness_hub_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswl1KtuejVOEPoINTS34E-g9qXRJYP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275370982626:android:21a8da4b1fe3b00d97b2bb",
+        "android_client_info": {
+          "package_name": "com.wellnesshub.android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswl1KtuejVOEPoINTS34E-g9qXRJYP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275370982626:android:0abee8891286c34197b2bb",
+        "android_client_info": {
+          "package_name": "com.wellnesshub.uxglass"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCswl1KtuejVOEPoINTS34E-g9qXRJYP4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
